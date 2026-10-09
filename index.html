@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi gestor de tareas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Mi gestor de tareas</h1>
+      <p>Organiza las tareas que quieres completar.</p>
+
+      <form>
+        <label for="nueva-tarea">Nueva tarea</label>
+        <input
+          type="text"
+          id="nueva-tarea"
+          name="tarea"
+          placeholder="Por ejemplo: estudiar HTML"
+          required
+        >
+        <button type="submit">Agregar tarea</button>
+      </form>
+
+      <section>
+        <h2>Mis tareas</h2>
+        <ul id="lista-tareas"></ul>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,9 +1,7 @@
-/* Incluye el relleno y los bordes dentro del ancho del elemento. */
 * {
   box-sizing: border-box;
 }
 
-/* Apariencia general de la página. */
 body {
   margin: 0;
   padding: 24px;
@@ -13,20 +11,21 @@ body {
   background-color: #f3f4f6;
 }
 
-/* Panel blanco centrado. */
 main {
-  max-width: 560px;
+  max-width: 640px;
   margin: 24px auto;
-  padding: 24px;
+  padding: 28px;
   background-color: #ffffff;
-  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
   margin-top: 0;
+  color: #1e3a8a;
 }
 
-/* Organiza el formulario en una columna. */
 form {
   display: flex;
   flex-direction: column;
@@ -37,18 +36,18 @@ label {
   font-weight: bold;
 }
 
-input {
+input[type="text"] {
   width: 100%;
   padding: 12px;
   border: 1px solid #6b7280;
-  border-radius: 6px;
+  border-radius: 8px;
   font: inherit;
 }
 
 button {
   padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font: inherit;
   font-weight: bold;
   color: #ffffff;
@@ -56,12 +55,10 @@ button {
   cursor: pointer;
 }
 
-/* Color del botón cuando pasas el puntero por encima. */
 button:hover {
   background-color: #1d4ed8;
 }
 
-/* Resalta el elemento seleccionado con el teclado. */
 input:focus-visible,
 button:focus-visible {
   outline: 3px solid #1d4ed8;
@@ -72,7 +69,55 @@ section {
   margin-top: 32px;
 }
 
+#lista-tareas {
+  padding: 0;
+  list-style: none;
+}
+
 #lista-tareas li {
-  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background-color: #f9fafb;
+}
+
+.tarea-etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.tarea-casilla {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin: 0;
+  accent-color: #2563eb;
+}
+
+.tarea-texto {
   overflow-wrap: anywhere;
+}
+
+.completada .tarea-texto {
+  text-decoration: line-through;
+  color: #4b5563;
+}
+
+.boton-eliminar {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  background-color: #b91c1c;
+}
+
+.boton-eliminar:hover {
+  background-color: #991b1b;
 }

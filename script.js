@@ -1,4 +1,6 @@
 const resumenTareas = document.getElementById("resumen-tareas");
+const filtroTareas = document.getElementById("filtro-tareas");
+const mensajeFiltro = document.getElementById("mensaje-filtro");
 const formulario = document.querySelector("form");
 const campoTarea = document.getElementById("nueva-tarea");
 const listaTareas = document.getElementById("lista-tareas");
@@ -54,9 +56,31 @@ function actualizarResumen(){
   resumenTareas.textContent =
     `Pendientes: ${pendientes} · Completadas: ${completadas}`;
   }
+function aplicarFiltro() {
+  const filtro = filtroTareas.value;
+  let visibles = 0;
+
+  Array.from(listaTareas.children).forEach(function (tarea) {
+    const completada = tarea.querySelector(".tarea-casilla").checked;
+
+    const mostrar =
+      filtro === "todas" ||
+      (filtro === "pendientes" && !completada) ||
+      (filtro === "completadas" && completada);
+
+    tarea.hidden = !mostrar;
+
+    if (mostrar) {
+      visibles++;
+    }
+  });
+
+  mensajeFiltro.hidden = visibles > 0;
+}
 // Guarda tanto el texto como el estado de cada tarea.
 function guardarTareas() {
   actualizarResumen();
+  aplicarFiltro();
   const tareas = Array.from(listaTareas.children, function (tarea) {
     return {
       texto: tarea.querySelector(".tarea-texto").textContent,
@@ -126,4 +150,6 @@ function agregarTarea(evento) {
 
 cargarTareas();
 actualizarResumen();
+aplicarFiltro();
 formulario.addEventListener("submit", agregarTarea);
+filtroTareas.addEventListener("change", aplicarFiltro);

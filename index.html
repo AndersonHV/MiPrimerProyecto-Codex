@@ -27,7 +27,19 @@
       <section>
         <h2>Mis tareas</h2>
         <p id="resumen-tareas" aria-live="polite"></p>
+        
+        <div class="filtros">
+          <label for="filtro-tareas">Mostrar:</label>
+          <select id="filtro-tareas">
+            <option value="todas">Todas</option>
+            <option value="pendientes">Pendientes</option>
+            <option value="completadas">Complentadas</option>
+          </select>
+        </div>
         <ul id="lista-tareas"></ul>
+        <p id="mensaje-filtro" role="status" hidden>
+          No hay tareas para este filtro.
+        </p>
       </section>
     </main>
   </body>

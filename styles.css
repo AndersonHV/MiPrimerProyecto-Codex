@@ -121,3 +121,28 @@ section {
 .boton-eliminar:hover {
   background-color: #991b1b;
 }
+.filtros {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.filtros select {
+  padding: 8px 12px;
+  border: 1px solid #6b7280;
+  border-radius: 8px;
+  font: inherit;
+  color: #1f2937;
+  background-color: #ffffff;
+}
+
+.filtros select:focus-visible {
+  outline: 3px solid #1d4ed8;
+  outline-offset: 3px;
+}
+
+#lista-tareas li[hidden] {
+  display: none;
+}

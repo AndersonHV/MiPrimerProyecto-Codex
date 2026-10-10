@@ -8,7 +8,7 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
   color: #1f2937;
-  background-color: #f3f4f6;
+  background-color: #110482;
 }
 
 main {
@@ -23,7 +23,7 @@ main {
 
 h1 {
   margin-top: 0;
-  color: #1e3a8a;
+  color: #e81f25;
 }
 
 form {
@@ -39,7 +39,7 @@ label {
 input[type="text"] {
   width: 100%;
   padding: 12px;
-  border: 1px solid #6b7280;
+  border: 1px solid #270647;
   border-radius: 8px;
   font: inherit;
 }
@@ -56,7 +56,7 @@ button {
 }
 
 button:hover {
-  background-color: #1d4ed8;
+  background-color: #3f1dd8;
 }
 
 input:focus-visible,
@@ -80,9 +80,9 @@ section {
   gap: 12px;
   margin-top: 12px;
   padding: 14px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #ebe5e9;
   border-radius: 10px;
-  background-color: #f9fafb;
+  background-color: #fbf9fb;
 }
 
 .tarea-etiqueta {
@@ -109,7 +109,7 @@ section {
 
 .completada .tarea-texto {
   text-decoration: line-through;
-  color: #4b5563;
+  color: #0b9e2e;
 }
 
 .boton-eliminar {

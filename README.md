@@ -59,6 +59,7 @@ ni configurar un servidor.
 3. Marca la casilla para completar la tarea.
 4. Desmarca la casilla para dejarla pendiente nuevamente.
 5. Pulsa «Eliminar» para quitarla de la lista.
+6. Filtrar las tareas pendientes y completadas en la función «Mostrar»
 
 ## Almacenamiento
 
@@ -81,4 +82,5 @@ permanecen en el navegador.
 - Marca una tarea y recarga: debe seguir completada.
 - Desmárcala y recarga: debe seguir pendiente.
 - Elimina una tarea y recarga: no debe reaparecer.
+- Filtra las tareas pendientes y completadas que debe de mostrarse la acción correspondiente.
 - Cierra la página y vuelve a abrirla: las tareas restantes deben recuperarse.

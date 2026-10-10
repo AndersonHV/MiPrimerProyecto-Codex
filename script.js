@@ -1,3 +1,4 @@
+const resumenTareas = document.getElementById("resumen-tareas");
 const formulario = document.querySelector("form");
 const campoTarea = document.getElementById("nueva-tarea");
 const listaTareas = document.getElementById("lista-tareas");
@@ -41,9 +42,21 @@ function mostrarTarea(texto, completada = false) {
   tarea.append(etiqueta, botonEliminar);
   listaTareas.appendChild(tarea);
 }
+function actualizarResumen(){
+  const total = listaTareas.children.length;
 
+  const completadas = listaTareas.querySelectorAll(
+    ".tarea-casilla:checked"
+  ).length;
+
+  const pendientes = total - completadas;
+  
+  resumenTareas.textContent =
+    `Pendientes: ${pendientes} · Completadas: ${completadas}`;
+  }
 // Guarda tanto el texto como el estado de cada tarea.
 function guardarTareas() {
+  actualizarResumen();
   const tareas = Array.from(listaTareas.children, function (tarea) {
     return {
       texto: tarea.querySelector(".tarea-texto").textContent,
@@ -112,4 +125,5 @@ function agregarTarea(evento) {
 }
 
 cargarTareas();
+actualizarResumen();
 formulario.addEventListener("submit", agregarTarea);
